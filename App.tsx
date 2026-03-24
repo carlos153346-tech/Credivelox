@@ -22,6 +22,9 @@ const App: React.FC = () => {
   };
 
   const handleFinalize = () => {
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
     window.location.href = 'https://pay.checkoutpixes.com/checkout/cmmqp606109y61ymygpuev28o?offer=Z5NELE5';
   };
 
